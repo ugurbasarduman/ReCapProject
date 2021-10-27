@@ -19,7 +19,7 @@ namespace WebAPI.Controllers
         {
             this.customerService = customerService;
         }
-        [HttpGet]
+        [HttpGet("getall")]
         public IActionResult GetAll()
         {
             var result = customerService.GetAll();
@@ -29,7 +29,7 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
-        [HttpGet]
+        [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
             var result = customerService.GetById(id);
@@ -39,7 +39,7 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
-        [HttpPost]
+        [HttpPost("add")]
         public IActionResult Add(Customer customer)
         {
             var result = customerService.Add(customer);

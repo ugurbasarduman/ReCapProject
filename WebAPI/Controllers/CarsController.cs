@@ -19,7 +19,7 @@ namespace WebAPI.Controllers
         {
             this.carService = carService;
         }
-        [HttpGet]
+        [HttpGet("getall")]
         public IActionResult GetAll()
         {
             var result = carService.GetAll();
@@ -29,7 +29,7 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
-        [HttpGet]
+        [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
             var result = carService.GetById(id);
@@ -39,7 +39,7 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
-        [HttpPost]
+        [HttpPost("add")]
         public IActionResult Add(Car car)
         {
             var result = carService.Add(car);
